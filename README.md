@@ -74,7 +74,7 @@ output.txt
 
 ### 1️⃣ 초기 설정
 
-#### BOJ-extension 사용자 ID 설정
+#### 1. BOJ-extension 사용자 ID 설정
 1. [.vscode/settings.json](.vscode/settings.json) 열기
 2. `"boj-ex.userid"` 값에 백준 아이디 입력
    ```json
@@ -82,10 +82,39 @@ output.txt
    ```
    > ⚠️ **보안**: `.vscode/` 폴더는 `.gitignore`에 포함되어 있어 Git에 업로드되지 않습니다.
 
+#### 2. 문제 목록 생성 (선택사항)
+문제를 난이도와 태그로 필터링하여 탐색하고 싶다면:
+
+```bash
+python fetch_problems.py
+```
+
+- `problem_list.html` 파일이 생성됩니다
+- 브라우저나 VS Code Live Preview로 열기
+- 난이도, 태그로 필터링 가능
+- 문제 클릭 시 백준 사이트로 이동
+
 ---
 
 ### 2️⃣ 문제 풀이 워크플로우
 
+#### 방법 A: 문제 목록에서 선택 (추천)
+1. **문제 탐색**
+   - `problem_list.html` 열기
+   - 난이도 필터 선택 (Bronze, Silver, Gold)
+   - 태그 필터 선택 (DP, 그리디 등 - 복수 선택 가능)
+   - 검색창에서 문제 번호나 제목 검색
+
+2. **문제 열기**
+   - 원하는 문제 클릭 → 백준 사이트에서 문제 확인
+   - 문제 번호 복사
+
+3. **파일 생성**
+   - VS Code 사이드바에서 BOJ-extension 아이콘 클릭
+   - "문제 생성" 선택
+   - 문제 번호 입력
+
+#### 방법 B: 직접 문제 번호 입력
 1. **문제 파일 생성**
    - VS Code 사이드바에서 BOJ-extension 아이콘 클릭
    - "문제 보기" 또는 "문제 생성" 선택
@@ -134,9 +163,11 @@ git push
 Baekjoon/
 ├── .git/                   # Git 저장소
 ├── .vscode/
-│   └── settings.json       # VS Code 및 확장 설정 (ID/PW 포함, Git 제외)
+│   └── settings.json       # VS Code 및 확장 설정 (Git 제외)
 ├── .gitignore              # Git 제외 파일 목록
 ├── README.md               # 프로젝트 설명서 (이 파일)
+├── fetch_problems.py       # 문제 목록 생성 스크립트
+├── problem_list.html       # 문제 탐색 페이지 (Git 제외)
 └── [문제 파일들]            # 백준 문제 풀이 코드
     ├── 1000.py
     ├── 1001.py
