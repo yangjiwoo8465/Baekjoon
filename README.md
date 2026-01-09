@@ -82,11 +82,16 @@ cookie.txt
 
 ### 1️⃣ 초기 설정
 
-#### Goinmul 로그인
-1. `F1` 또는 `Ctrl+Shift+P` 눌러 명령 팔레트 열기
-2. **"백준 로그인"** 또는 **"baekjoon login"** 검색 및 실행
-3. `cookie.txt` 파일의 쿠키 값 입력
-   > ⚠️ **보안**: `cookie.txt` 파일은 `.gitignore`에 포함되어 있어 Git에 업로드되지 않습니다.
+#### Goinmul 설정
+1. [.vscode/settings.json](.vscode/settings.json) 열기
+2. 백준 계정 정보 입력
+   ```json
+   "goinmul.baekjoon.id": "your_baekjoon_id",
+   "goinmul.baekjoon.pw": "your_baekjoon_password",
+   "goinmul.baekjoon.lang": "python3",
+   ```
+   > ⚠️ **보안**: `.vscode/` 폴더는 `.gitignore`에 포함되어 있어 Git에 업로드되지 않습니다.
+3. `F1` → **"백준 로그인"** 실행하여 로그인 확인
 
 #### BOJ-extension 사용자 ID 설정
 1. [.vscode/settings.json](.vscode/settings.json) 열기
@@ -162,9 +167,8 @@ git push
 Baekjoon/
 ├── .git/                   # Git 저장소
 ├── .vscode/
-│   └── settings.json       # VS Code 및 확장 설정
+│   └── settings.json       # VS Code 및 확장 설정 (ID/PW 포함, Git 제외)
 ├── .gitignore              # Git 제외 파일 목록
-├── cookie.txt              # 백준 로그인 쿠키 (비공개)
 ├── README.md               # 프로젝트 설명서 (이 파일)
 └── [문제 파일들]            # 백준 문제 풀이 코드
     ├── 1000.py
