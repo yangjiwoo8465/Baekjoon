@@ -25,13 +25,9 @@ VS Code에서 백준 문제 풀이를 효율적으로 관리하고 자동으로 
 - 테스트 케이스 실행 (Python, C++, Java, Rust, JS 지원)
 - GitHub 워크플로우 생성
 
-### 2. Goinmul (`ckcks12.goinmul`)
-백준 로그인 및 코드 제출을 지원합니다.
-
-**주요 기능:**
-- 쿠키 기반 로그인
-- 현재 파일 백준에 제출
-- 문제 번호 자동 저장
+### 2. ~~Goinmul (`ckcks12.goinmul`)~~ (사용 중단)
+> ⚠️ **경고**: Goinmul은 2019년 이후 업데이트되지 않아 백준 로그인이 작동하지 않습니다.
+> BOJ-extension을 사용하세요.
 
 ### 3. GitDoc (`vsls-contrib.gitdoc`)
 파일 저장 시 자동으로 Git 커밋 및 푸시합니다.
@@ -49,12 +45,6 @@ VS Code에서 백준 문제 풀이를 효율적으로 관리하고 자동으로 
 
 ```json
 {
-  // Goinmul 설정 (로그인 및 제출)
-  "goinmul.baekjoon.id": "your_baekjoon_id",
-  "goinmul.baekjoon.pw": "your_baekjoon_password",
-  "goinmul.baekjoon.lang": "python3",
-  "goinmul.baekjoon.open": "close",
-
   // BOJ-extension 설정 (파일 생성 및 테스트)
   "boj-ex.language": "python",
   "boj-ex.userid": "your_baekjoon_id",
@@ -84,29 +74,17 @@ output.txt
 
 ### 1️⃣ 초기 설정
 
-#### Goinmul 설정
-1. [.vscode/settings.json](.vscode/settings.json) 열기
-2. 백준 계정 정보 입력
-   ```json
-   "goinmul.baekjoon.id": "your_baekjoon_id",
-   "goinmul.baekjoon.pw": "your_baekjoon_password",
-   "goinmul.baekjoon.lang": "python3",
-   ```
-   > ⚠️ **보안**: `.vscode/` 폴더는 `.gitignore`에 포함되어 있어 Git에 업로드되지 않습니다.
-3. `F1` → **"백준 로그인"** 실행하여 로그인 확인
-
 #### BOJ-extension 사용자 ID 설정
 1. [.vscode/settings.json](.vscode/settings.json) 열기
 2. `"boj-ex.userid"` 값에 백준 아이디 입력
    ```json
-   "boj-ex.userid": "yangjiwoo8465"
+   "boj-ex.userid": "your_baekjoon_id"
    ```
+   > ⚠️ **보안**: `.vscode/` 폴더는 `.gitignore`에 포함되어 있어 Git에 업로드되지 않습니다.
 
 ---
 
 ### 2️⃣ 문제 풀이 워크플로우
-
-#### 방법 A: BOJ-extension 사용 (추천)
 
 1. **문제 파일 생성**
    - VS Code 사이드바에서 BOJ-extension 아이콘 클릭
@@ -125,19 +103,6 @@ output.txt
    - BOJ-extension의 "제출하기" 버튼 클릭
    - 코드가 클립보드에 자동 복사됨
    - 열린 백준 제출 페이지에 붙여넣기 후 제출
-
-#### 방법 B: Goinmul 직접 제출
-
-1. **코드 작성 및 저장**
-   - `.py`, `.cpp`, `.java` 등의 파일 생성
-   - 코드 작성 후 저장 (GitDoc이 자동 커밋)
-
-2. **백준에 제출**
-   - `F1` → **"백준 제출"** 또는 **"baekjoon submit"**
-   - 문제 번호 입력
-   - 자동으로 백준에 제출됨
-
-> ⚠️ **주의**: 백준의 보안 강화로 인해 Goinmul의 자동 제출이 작동하지 않을 수 있습니다. 이 경우 방법 A(BOJ-extension)를 사용하세요.
 
 ---
 
