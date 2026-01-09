@@ -50,11 +50,14 @@ VS Code에서 백준 문제 풀이를 효율적으로 관리하고 자동으로 
 ```json
 {
   // Goinmul 설정 (로그인 및 제출)
-  "goinmul.problemNumber": "",
+  "goinmul.baekjoon.id": "your_baekjoon_id",
+  "goinmul.baekjoon.pw": "your_baekjoon_password",
+  "goinmul.baekjoon.lang": "python3",
+  "goinmul.baekjoon.open": "close",
 
   // BOJ-extension 설정 (파일 생성 및 테스트)
   "boj-ex.language": "python",
-  "boj-ex.userid": "",
+  "boj-ex.userid": "your_baekjoon_id",
 
   // GitDoc 설정 (자동 커밋 및 푸시)
   "gitdoc.enabled": true,
@@ -70,10 +73,9 @@ __pycache__
 .DS_Store
 input.txt
 output.txt
-.vscode
+.vscode        # 로그인 정보가 포함된 settings.json 제외
 *.class
 *.exe
-cookie.txt
 ```
 
 ---
